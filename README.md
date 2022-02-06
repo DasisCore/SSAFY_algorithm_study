@@ -4,7 +4,7 @@
 
 ## 주의 사항.
 
-- 
+- IM시험이 2월 28일이므로 그전까지 solved.ac __class3__까지는 푸는 것 추천.
 
 ## 언어.
 
@@ -77,4 +77,6 @@ $ git clone https://github.com/DasisCore/SSAFY_algorithm_study.git
 ### 알고리즘, CS 공부 관련 자료는 Github가 아닌 노션을 이용해서
 
 ###  공유할 예정입니다.
+
+https://www.notion.so/e6cd3c8007914c2181b82774e562de8e
 
