@@ -23,6 +23,7 @@ a, b = map(int, input().split())
 N = b // a 
 # 최소공배수 최대공약수의 성질
 
+
 li = [] # N의 약수 구하기
 for i in range(1, N + 1):
     if i * i > N:
