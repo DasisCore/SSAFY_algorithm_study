@@ -1,6 +1,5 @@
 # 1220. Magnetic
 
-from pprint import pprint
 import sys
 sys.stdin = open("input.txt")
 
@@ -28,13 +27,6 @@ for _ in range(10):
                 answer += 1
 
     print(f"#{_ + 1} {answer}")
-
-
-
-
-
-
-
 
 # ex
 # 7
