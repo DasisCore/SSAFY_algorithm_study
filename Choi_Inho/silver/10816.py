@@ -1,12 +1,40 @@
 import sys
-
+from collections import Counter
 N = int(sys.stdin.readline())
-P = []
-for _ in range(N):
-    x, y = sys.stdin.readline().split()
-    P += [[int(x), y]]
+lstN = sorted(list(map(int, sys.stdin.readline().split())))
+M = int(sys.stdin.readline())
+lstM = list(map(int, sys.stdin.readline().split()))
+arr = [0]*M
 
-P.sort(key=lambda x:x[0])
+cnt = Counter(lstN)
+for i in range(M):
+    if lstM[i] in cnt:
+        arr[i] = cnt[lstM[i]]
 
-for i in P:
-    print(*i)
+print(*arr)
+
+# for i in range(M):
+#     if arr[i]:
+#         continue
+#     s = 0
+#     e = N - 1
+#     while s <= e:
+#         m = (s+e) // 2
+#         if lstM[i] == lstN[m]:
+#             s = e = m
+#             while lstN[s] == lstM[i]:
+#                 s -= 1
+#             while e < N and lstN[e] == lstM[i]:
+#                 e += 1
+#             arr[i] = e - s - 1
+#             for j in range(i+1, M):
+#                 if lstM[j] == lstM[i]:
+#                     arr[j] = arr[i]
+#             lstN = lstN[:s+1] + lstN[e:]
+#             break
+#         elif lstM[i] > lstN[m]:
+#             s = m + 1
+#         elif lstM[i] < lstN[m]:
+#             e = m - 1
+#
+# print(*arr)
