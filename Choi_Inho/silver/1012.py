@@ -8,4 +8,4 @@ for _ in range(T):
         x, y = map(int, sys.stdin.readline().split())
         arr[y][x] = 1
 
-    for
+    pass
