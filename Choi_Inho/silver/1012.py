@@ -7,5 +7,4 @@ for _ in range(T):
     for i in range(K):
         x, y = map(int, sys.stdin.readline().split())
         arr[y][x] = 1
-
     pass
