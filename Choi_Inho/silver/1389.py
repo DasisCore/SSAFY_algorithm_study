@@ -1,20 +1,17 @@
 def bfs(p):
     global my_min, people
-    q = [p, 0]
-    visited = [1] + [0]*N
+    q = [[p, 0]]
+    visited = [[1, 0]] + [[0, 0] for _ in range(N)]
+    visited[p][0] = 1
+    while q:
+        x, y = q.pop(0)
+        for r in rs[x]:
+            if not visited[r][0]:
+                visited[r][0], visited[r][1] = 1, y + 1
+                q.append([r, y+1])
     cnt = 0
-    while 1:
-        x = q.pop(0)
-        if x == 0:
-            cnt += 1
-            q.append(0)
-            if not 0 in visited:
-                break
-        else:
-            for r in rs[x]:
-                if not visited[r]:
-                    visited[r] = 1
-                    q.append(r)
+    for f in visited:
+        cnt += f[1]
     if cnt < my_min:
         people = p
         my_min = cnt
