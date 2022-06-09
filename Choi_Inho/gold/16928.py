@@ -20,13 +20,14 @@ while not board[100]:
         if now + dice > 100:
             continue
 
-        if not board[now + dice] or board[now] + 1 < board[now + dice]:
+        if not board[now + dice]:
             board[now + dice] = board[now] + 1
-            if now + dice in d and (not board[d[now + dice]] or board[now] + 1 < board[d[now + dice]]):
+            if now + dice in d and not board[d[now + dice]]:
                 board[d[now + dice]] = board[now] + 1
                 q.append(d[now + dice])
+            elif now + dice in d:
+                continue
             else:
                 q.append(now + dice)
 
-print(board)
 print(board[100])
